@@ -49,6 +49,8 @@ public class Top10Servlet extends HttpServlet{
 		parisAttactions.add("Sacre Couer Basilica");
 	}
 	
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
