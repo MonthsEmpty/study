@@ -7,11 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>hello</title>
 </head>
+<script type="text/javascript">
+alert("123")
+</script>
 <body>
 We operate in these countries
 <ul>
 
-<c:forEach></c:forEach>
+<%-- <c:forEach></c:forEach> --%>
 	<%-- <c:forEach item="${countries }" var="country">
 		<li></li>
 	</c:forEach> --%>
