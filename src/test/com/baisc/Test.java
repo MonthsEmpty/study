@@ -16,7 +16,6 @@ public class Test {
 		}   
 		catch(Exception e) {}   
 		  
-	//	To read the object back, we can write   
 		  
 		try  
 		{   

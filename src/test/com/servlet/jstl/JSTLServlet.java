@@ -21,9 +21,9 @@ public class JSTLServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.setAttribute("", "");
+		request.setAttribute("aaa", "123");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/employee.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/JSTL.jsp");
 		rd.forward(request, response);
 	}
 }
