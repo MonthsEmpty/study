@@ -69,7 +69,7 @@ public class PreferenceServlet extends HttpServlet{
 		response.addCookie(new Cookie("maxRecords", maxRecords));
 		response.addCookie(new Cookie("titleFontSize", titleFontSize));
 		Cookie cookie = new Cookie("titleFontWeight", "");
-		cookie.setMaxAge(0);
+		cookie.setMaxAge(1000);//设置cookie的存在时间
 		response.addCookie(cookie);
 		
 		if(titleStyleAndWeight != null){
