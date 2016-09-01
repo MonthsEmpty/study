@@ -6,4 +6,19 @@
     <welcome-file>index.htm</welcome-file>
     <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <servlet>
+  	<servlet-name>MyTestServlet</servlet-name>
+  	<servlet-class>test.com.servlet.MyTestServlet</servlet-class>
+  	<init-param>
+  		<param-name>ininName</param-name>
+  		<param-value>vincent</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyTestServlet</servlet-name>
+  	<url-pattern>/MyTestServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
