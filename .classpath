@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
@@ -11,5 +12,15 @@
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard-1.1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lts-core-1.6.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lts-jobclient-1.6.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lts-jobtracker-1.6.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lts-spring-1.6.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lts-tasktracker-1.6.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/fastjson-1.2.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/netty-all-4.0.25.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/leveldbjni-all-1.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/zkclient-0.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jline-0.9.94.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
