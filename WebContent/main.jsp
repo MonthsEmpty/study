@@ -19,5 +19,9 @@ We operate in these countries
 		<li></li>
 	</c:forEach> --%>
 </ul>
+
+<form action="" enctype="">
+	<input type="file">
+</form>
 </body>
 </html>

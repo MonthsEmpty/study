@@ -47,8 +47,8 @@ Books in Styled Table
 </table>
 <br>
 ISBNs only:
-	<c:forEach items="${ }">
+	<%-- <c:forEach items="${ }">
 		
-	</c:forEach>
+	</c:forEach> --%>
 </body>
 </html>
