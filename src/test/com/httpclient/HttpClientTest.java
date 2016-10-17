@@ -33,7 +33,7 @@ import org.apache.http.util.EntityUtils;
 public class HttpClientTest {
 
 	public static void main(String[] args) {
-		HttpClientTest.specialPost1();
+		HttpClientTest.specialPost();
 	//	PostMethod method = new PostMethod(""); 
 		
 	}
@@ -121,11 +121,11 @@ public class HttpClientTest {
 	 */
 	public static void specialPost(){
 		CloseableHttpClient httpClient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("");
+		HttpPost httpPost = new HttpPost("http://localhost:8081/test/doPostTestServlet");
 		List<NameValuePair> list = new ArrayList<NameValuePair>();
-		list.add(new BasicNameValuePair("UserNumber", "13173001830"));
-		list.add(new BasicNameValuePair("corp_id", "qd007"));
-		httpPost.setHeader("Content-Type", "application/json");
+		list.add(new BasicNameValuePair("number", "13173001830"));
+		list.add(new BasicNameValuePair("corp", "qd007"));
+		httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
 		try {
 			UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(list);
 			httpPost.setEntity(urlEncodedFormEntity);

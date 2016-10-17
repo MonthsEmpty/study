@@ -17,8 +17,8 @@ public class DoPostTestServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String str = request.getParameter("aaa");
-		System.out.println("aaa is :" + str);
+		String str = request.getParameter("number");
+		System.out.println("number is :" + str);
 		InputStream is = request.getInputStream();
 		InputStreamReader reader = new InputStreamReader(is);
 		char[] c = new char[1024]; 
