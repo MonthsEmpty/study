@@ -16,11 +16,11 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(filterName="LoggingFilter",urlPatterns={"/*"},
+/*@WebFilter(filterName="LoggingFilter",urlPatterns={"/*"},
 			initParams = {
 					@WebInitParam(name="logFileName",value="log.txt"),
 					@WebInitParam(name="prefix",value="URI:")
-})
+})*/
 public class LoggingFilter implements Filter{
 	
 	private PrintWriter logger;
@@ -40,6 +40,7 @@ public class LoggingFilter implements Filter{
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		logger.println(new Date() + " " + prefix + httpServletRequest.getRequestURL());
 		logger.flush();
+		//这一步是必须的，不然请求就卡在这了。
 		filterChain.doFilter(request, response);
 	}
 
@@ -48,6 +49,7 @@ public class LoggingFilter implements Filter{
 		String logFileName = filterConfig.getInitParameter("logFileName");
 		String appPath = filterConfig.getServletContext().getRealPath("/");
 		
+		System.out.println("FilterName :" + filterConfig.getFilterName());
 		System.out.println("logFileName:" + logFileName + ",appPath:" + appPath);
 		try {
 			logger = new PrintWriter(new File(appPath,logFileName));

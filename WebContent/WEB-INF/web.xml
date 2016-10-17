@@ -21,4 +21,31 @@
   	<url-pattern>/MyTestServlet</url-pattern>
   </servlet-mapping>
   
+  <filter>
+  	<filter-name>LoggingFilter</filter-name>
+  	<filter-class>test.com.servlet.filter.LoggingFilter</filter-class>
+  	<init-param>
+  		<param-name>logFileName</param-name>
+  		<param-value>log.txt</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>prefix</param-name>
+  		<param-value>URI:</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>LoggingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>TestChainFilter</filter-name>
+  	<filter-class>test.com.servlet.filter.TestChainFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>TestChainFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>
