@@ -26,36 +26,36 @@ public class PostgresqlJDBCTest {
 
 	public static void main(String[] args) {
 		// 要连接的数据库URL
-				String url = "jdbc:postgresql://localhost/mytest";
-				// 连接的数据库时使用的用户名
-				String username = "postgres";
-				// 连接的数据库时使用的密码
-				String password = "renwu123";
-				try {
-					// 1.加载驱动
-					Class.forName("org.postgresql.Driver");
-					// 2.获取与数据库的链接
-					Connection conn = DriverManager.getConnection(url, username, password);
-					// 3.获取用于向数据库发送sql语句的statement
-					Statement st = conn.createStatement();
-					// 4.向数据库发sql,并获取代表结果集的resultset
-					String sql = "select * from people";
-					ResultSet rs = st.executeQuery(sql);
-					// 5.取出结果集的数据
-					while (rs.next()) {
-						System.out.println(rs.getObject("id"));
-						System.out.println(rs.getObject("name"));
-						System.out.println(rs.getObject("age"));
-					}
-					// 6.关闭链接，释放资源
-					rs.close();
-					st.close();
-					conn.close();
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+		String url = "jdbc:postgresql://localhost/mytest";
+		// 连接的数据库时使用的用户名
+		String username = "postgres";
+		// 连接的数据库时使用的密码
+		String password = "renwu123";
+		try {
+			// 1.加载驱动
+			Class.forName("org.postgresql.Driver");
+			// 2.获取与数据库的链接
+			Connection conn = DriverManager.getConnection(url, username, password);
+			// 3.获取用于向数据库发送sql语句的statement
+			Statement st = conn.createStatement();
+			// 4.向数据库发sql,并获取代表结果集的resultset
+			String sql = "select * from people";
+			ResultSet rs = st.executeQuery(sql);
+			// 5.取出结果集的数据
+			while (rs.next()) {
+				System.out.println(rs.getObject("id"));
+				System.out.println(rs.getObject("name"));
+				System.out.println(rs.getObject("age"));
+			}
+			// 6.关闭链接，释放资源
+			rs.close();
+			st.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
