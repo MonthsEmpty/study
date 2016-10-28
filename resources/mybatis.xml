@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <environments default="development">
-        <environment id="development">
+        <environment id="development"><!-- 这个id还必须和environments的default一样了，不一样则不设置这个Environment，出于何种目的呢？XMLConfigBuilder236行 -->
             <transactionManager type="JDBC" />
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">

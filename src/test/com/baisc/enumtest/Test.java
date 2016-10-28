@@ -26,9 +26,20 @@ public class Test {
 		/* System.out.println("EnumTest.FRI 的 value = " + EnumTest.FRI.getValue());
 		 System.out.println("EnumTest.FRI 的 Rest = " + EnumTest.FRI.isRest());
 		 System.out.println("EnumTest.SAT 的 Rest = " + EnumTest.SAT.isRest());*/
-		 Class clz = Color.class;
+		 /*Class clz = Color.class;
 		  for (Object obj : clz.getEnumConstants()) {
 			  System.out.println(obj.toString());
-		  }
+		  }*/
+		People people = People.OLD;
+		System.out.println(people.getProfession());
+		Phone phone = Phone.HTC;
+		System.out.println(phone);
+		for(Phone pp : Phone.values()){
+			System.out.println(pp);
+		}
+	}
+	
+	public enum Phone{
+		IPHONE,HTC
 	}
 }
