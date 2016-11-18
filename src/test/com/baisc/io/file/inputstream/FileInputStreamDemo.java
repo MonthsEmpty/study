@@ -14,21 +14,28 @@ import java.io.InputStream;
 public class FileInputStreamDemo {
 
 	public static void main(String[] args) {
-		read4();
+		read();
 	}
 	
 	/**
 	 * 如果byte数组的大小设置过小则内容无法显示齐全，而过大则浪费空间
 	 * 下面则针对这个来解决
+	 * 2016.11.15新测试
+	 * read(byte[] b, int off, int len) 从此输入流中将最多 len 个字节的数据读入一个 byte 数组中。
+	 * 目标数组b的偏移量为off，也就是说从b[off]开始写入流读取的数据。在数组b的off之前的位置随你怎么处理
+	 * BufferedInputStream这利用了这一特性。
+	 * 
 	 */
 	public static void read(){
-		File f = new File("G:" + File.separator + "test.txt");
+		File f = new File("D:" + File.separator + "test.txt");
 		try {
 			InputStream inputStream = new FileInputStream(f);
 			byte[] b = new byte[8];
-			inputStream.read(b);
+			b[0] = 'c';
+			inputStream.read(b,2,6);
+			//inputStream.read(b);
 			inputStream.close();
-			System.out.println("内容为：" + new String(b));
+			System.out.println("内容为:" + new String(b));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -80,7 +87,7 @@ public class FileInputStreamDemo {
 	 */
 	public static void read4(){
 		//第一步：通过File类找到一个文件
-		File f = new File("G:" + File.separator + "test.txt");
+		File f = new File("d:" + File.separator + "test.txt");
 		try {
 			//第二步：实例化InputStream
 			InputStream inputStream = new FileInputStream(f);
