@@ -17,6 +17,9 @@ import java.util.Date;
 
 public class Test {
 
+	protected int count;
+	  protected int pos;
+	
 	/**
 	 * -28
 228
@@ -53,7 +56,7 @@ public class Test {
 			System.out.println(str);
 		}*/
 		//现在是：2016-10-27 14:34:06,两小时前是：2016-10-27 12:34:06
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		/*DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 		String time1 = "2016-10-27 12:34:06";
 		String time2 = "2016-10-27 14:34:06";
 		 try {
@@ -63,7 +66,13 @@ public class Test {
 			System.out.println(minus);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		} 
+		} */
+		Test t = new Test();
+		if(t.pos > 0){
+			System.out.println(22);
+		}else{
+			System.out.println(11);
+		}
 		
 	}
 

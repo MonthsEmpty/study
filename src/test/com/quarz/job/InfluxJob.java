@@ -34,7 +34,7 @@ public class InfluxJob implements Job {
 
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpPost httpPost = new HttpPost("http://10.99.8.172:8086/write?db=vincent");
-		String param = "batchtest,testnum=12 num="+ new Random().nextInt(10);
+		String param = "vincenttest1,testnum=12 num="+ new Random().nextInt(10);
 		httpPost.setHeader("Content-Type", "text/html");
 		StringEntity entity = new StringEntity(param, "utf-8");
 		httpPost.setEntity(entity);
