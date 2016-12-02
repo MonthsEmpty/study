@@ -1,27 +1,14 @@
 package test.com.designpatterns.template;
 
-public class Coffe {
+public class Coffe extends CoffeeinBeverage{
 
-	void prepare(){
-		boilWater();
-		brewCoffeeGrinds();
-		pourInCup();
-		addSugarAndMilk();
-	}
-	
-	public void boilWater(){
-		System.out.println("Boiling water");
-	}
-	
-	public void brewCoffeeGrinds(){
+	@Override
+	void brew() {
 		System.out.println("Dripping coffee into filter");
 	}
-	
-	public void pourInCup(){
-		System.out.println("Pouring into cup");
-	}
-	
-	public void addSugarAndMilk(){
+
+	@Override
+	void addCondiments() {
 		System.out.println("Adding Sugar and Milk");
 	}
 }

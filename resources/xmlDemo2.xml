@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Header>
+		<Esb>
+			<Route>
+				<Time>2016-12-02 14:28:01</Time>
+				<EsbId>07fd0784580c1d480158be37dbf5380e</EsbId>
+			</Route>
+		</Esb>
+	</soapenv:Header>
+	<soapenv:Body>
+		<svcCallResponse xmlns="http://event.esb.cthneai">
+			<svcCallReturn><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<RESPONSE><GET_RT_CUMU><OFFER_NAME>校园励志卡</OFFER_NAME><ACCU_NAME>网内亲情号码通话</ACCU_NAME><UNIT_NAME>分钟</UNIT_NAME><CUMULATION_TOTAL>300.00</CUMULATION_TOTAL><CUMULATION_ALREADY>0.00</CUMULATION_ALREADY><CUMULATION_LEFT>300.00</CUMULATION_LEFT><SERVE_CODE>本地通话分钟数</SERVE_CODE></GET_RT_CUMU><RETURN_CODE>0</RETURN_CODE><RETURN_INFO>成功</RETURN_INFO></RESPONSE>]]></svcCallReturn>
+		</svcCallResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

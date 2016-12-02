@@ -67,4 +67,8 @@ public class JsonAndXmlExchange {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void parseXml(){
+		
+	}
 }

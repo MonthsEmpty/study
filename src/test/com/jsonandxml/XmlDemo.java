@@ -6,6 +6,11 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.xml.XMLSerializer;
+
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -21,7 +26,34 @@ public class XmlDemo {
 	
 	public static void main(String[] args) {
 		//getXmlFromXmlFile();
-		getXmlFromXmlString();
+//		getXmlFromXmlString();
+		parseXml();
+	}
+	
+	public static void parseXml(){
+		try {
+			is = XmlDemo.class.getResourceAsStream("/xmldemo2.xml");
+			SAXReader reader = new SAXReader(); 
+			Document document = reader.read(is);
+			Element root = document.getRootElement();
+			Element root1 = root.element("Body").element("svcCallResponse");
+			XMLSerializer serializer = new XMLSerializer();
+			String result = root1.elementText("svcCallReturn");
+			JSON rootNode = (JSON) JSONObject.fromObject(serializer.read(result)).get("GET_RT_CUMU");
+			if(rootNode.isArray()){
+				JSONArray array = JSONObject.fromObject(serializer.read(result)).getJSONArray("GET_RT_CUMU");
+				Iterator iterator = array.iterator();
+				while(iterator.hasNext()){
+					JSONObject objec = (JSONObject) iterator.next();
+					System.out.println(objec.get("OFFER_NAME"));
+				}
+			}else{
+				JSONObject jsonObject = JSONObject.fromObject(serializer.read(result)).getJSONObject("GET_RT_CUMU");
+				System.out.println(jsonObject);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 	/**
