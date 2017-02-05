@@ -29,7 +29,8 @@ public class SchedulerTest {
 			
 			//使用cornTrigger规则
 			Trigger trigger=TriggerBuilder.newTrigger().withIdentity("simpleTrigger", "triggerGroup")  
-		              .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ? *"))  
+		              .withSchedule(CronScheduleBuilder.cronSchedule("0,6,19 * * * * ? *"))  //每个分钟的0秒，6秒，19秒执行一次
+//		              .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ? *"))  //每隔5秒执行一次
 		              .startNow().build(); 
 			// 把作业和触发器注册到任务调度中
 			scheduler.scheduleJob(detail, trigger);

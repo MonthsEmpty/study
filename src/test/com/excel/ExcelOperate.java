@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.util.Date;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -36,9 +37,17 @@ public class ExcelOperate {
 		Cell cell = row.createCell(0);// 创建行的单元格,也是从0开始
 		cell.setCellValue("aaaa");// 设置单元格内容
 		cell.setCellStyle(style);
+		CellStyle style1 = workbook.createCellStyle();
+		style1.setAlignment(HSSFCellStyle.ALIGN_RIGHT);//靠右对齐
+		style1.setDataFormat(workbook.createDataFormat().getFormat("#,##0"));//千分位
+		style1.setFont(font);
 		row.createCell(1).setCellValue("aaaa");// 设置单元格内容,重载
 		row.createCell(2).setCellValue(new Date());// 设置单元格内容,重载
-		row.createCell(3).setCellValue(12.345);// 设置单元格内容,重载
+		Cell cell2 = row.createCell(3);
+		cell2.setCellStyle(style1);
+		cell2.setCellValue(1234567);// 设置单元格内容,重载
+		Row row2 = sheet.createRow(1);
+		row2.createCell(3).setCellValue(123123);
 		FileOutputStream out;
 		try {
 			out = new FileOutputStream(filePath);
@@ -75,6 +84,6 @@ public class ExcelOperate {
 	}
 
 	public static void main(String[] args) throws EncryptedDocumentException, InvalidFormatException, IOException {
-		readExcel();
+		createExcel();
 	}
 }

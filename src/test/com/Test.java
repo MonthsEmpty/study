@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,71 +52,18 @@ import org.xml.sax.SAXParseException;
 
 
 public class Test {
-	
+
 	private static DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
 	public static void main(String[] args) {
-/*DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		
+		int a= 1;
 		Calendar calendar = Calendar.getInstance();
-		Date d = calendar.getTime();
-		System.out.println(df.format(d));
-
-		CloseableHttpClient httpClient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("http://localhost:8080/sms-interface-monitor/email.xhtml?db=vincent");
-		String param = "vincenttest1,testnum=12 num="+ new Random().nextInt(10);
-		httpPost.setHeader("Content-Type", "text/html");
-		StringEntity entity = new StringEntity(param, "utf-8");
-		httpPost.setEntity(entity);
-		try {
-			CloseableHttpResponse response = httpClient.execute(httpPost);
-			StatusLine sl = response.getStatusLine();
-			System.out.println(sl.getStatusCode());
-			HttpEntity httpEntity = response.getEntity();
-			// 这边居然没有返回东西，但测试已经提交过去了，暂时不清楚为何没返回
-			System.out.println(EntityUtils.toString(httpEntity, "utf-8"));
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}*/
-		/*JSONObject jsonObject = new JSONObject();
-		JSONObject userFlag = new JSONObject();
-		userFlag.put("subscrbType", "0");
-		userFlag.put("flag3g", "3");
-		jsonObject.put("extraData", userFlag.toString());
-		JSONObject resultObject = new JSONObject();
-		resultObject.put("result", jsonObject);
-		System.out.println(resultObject);
-		
-		String extraData = JSONObject.fromObject(resultObject.get("result")).getString("extraData");
-		System.out.println(extraData);
-		JSONObject date = JSONObject.fromObject(extraData);
-		System.out.println(date);
-		System.out.println(date.getString("subscrbType"));*/
-		/*DateFormat df = new SimpleDateFormat("yyyyMMdd");
-		Calendar calendar = Calendar.getInstance();
-		System.out.println(df.format(calendar.getTime()));
-		calendar.set(Calendar.DATE, calendar.get(Calendar.DATE)-5);
-		String yesterday = df.format(calendar.getTime());
-		System.out.println(yesterday);*/
-		int i = -1;
-		System.out.println( 2 + i);
-		
-		//String extraData = JSONObject.fromObject(jsonObject2.getJSONObject("result")).getString("extraData");
-		//System.out.println(extraData);
-		
-		
-		/*String extraData = "{\"subscrbType\":\"0\",\"flag3g\":\"3\"}";
-		JSONObject json = JSONObject.fromObject(extraData);
-		
-		String extraData = JSONObject.fromObject(json.get("result")).getString("extraData");
-		JSONObject date = JSONObject.fromObject(extraData);*/
-
+		//获取昨天的时间
+		calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 44);
+		String yesterday = format.format(calendar.getTime());
+		System.out.println(yesterday);
 	}
 
-	
-	
 	private Properties parseAttributes(Node n) {
 		Properties attributes = new Properties();
 		NamedNodeMap attributeNodes = n.getAttributes();
@@ -128,7 +76,7 @@ public class Test {
 		}
 		return attributes;
 	}
-	
+
 	private Document createDocument(InputSource inputSource) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
