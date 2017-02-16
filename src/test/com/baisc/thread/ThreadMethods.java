@@ -1,11 +1,16 @@
 package test.com.baisc.thread;
 
+/**
+ * 对线程的方法进行解释
+ * @author Administrator
+ *
+ */
 public class ThreadMethods {
 
 	public static void main(String[] args) {
 		// isAlive();
-		//join();
-		interrupt();
+		testJoin();
+//		interrupt();
 	}
 
 	// 判断线程是否启动
@@ -26,7 +31,7 @@ public class ThreadMethods {
 	 * 线程强制运行期间，其他线程无法运行，必须等待此线程完成之后才可以继续执行
 	 * 
 	 */
-	public static void join() {
+	public static void testJoin() {
 		MyThread2 mt = new MyThread2();
 		Thread thread = new Thread(mt, "线程");
 		thread.start();

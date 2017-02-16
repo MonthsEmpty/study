@@ -11,6 +11,6 @@ public class CachedThreadPool {
 		for (int i = 0; i < 5; i++) {
 			executorService.execute(new LightOff());
 		}
-		executorService.shutdown();
+		executorService.shutdown();//对shitdown方法的调用可以防止新任务被提交给这个Executor
 	}
 }

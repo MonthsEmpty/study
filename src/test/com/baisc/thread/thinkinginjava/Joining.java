@@ -9,6 +9,6 @@ public class Joining {
 		Joiner
 			dopey = new Joiner("dopey", sleeper),
 			doc = new Joiner("Doc", grumpy);
-		//grumpy.interrupt();
+		grumpy.interrupt();
 	}
 }
