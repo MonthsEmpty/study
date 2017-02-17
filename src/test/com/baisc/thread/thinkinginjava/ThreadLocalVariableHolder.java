@@ -11,7 +11,7 @@ public class ThreadLocalVariableHolder {
 		private Random rand = new Random(47); 
 		protected synchronized Integer initialValue(){
 			return rand.nextInt(10000);
-		};
+		}
 	};
 	
 	public static void increment(){
