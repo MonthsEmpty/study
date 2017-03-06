@@ -16,7 +16,22 @@ public class LostMessage {
 	}
 	
 	public static void main(String[] args) {
-		try {
+			LostMessage lm = new LostMessage();
+			try {
+				lm.f();
+			} catch (VeryImportException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+//					System.out.println("11");
+					lm.dispose();
+				} catch (HoHumException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+/*		try {
 			LostMessage lm = new LostMessage();
 			try {
 				lm.f();
@@ -27,5 +42,5 @@ public class LostMessage {
 			System.out.println(e);
 		}
 		System.out.println("123");
-	}
+*/	}
 }

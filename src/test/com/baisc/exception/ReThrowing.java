@@ -4,7 +4,7 @@ public class ReThrowing {
 
 	public static void f() throws Exception{
 		System.out.println("originating the exception in f()");
-		throw new Exception("throw from f()");
+		throw new NullPointerException("throw from f()");
 	}
 	
 	public static void g() throws Exception{
