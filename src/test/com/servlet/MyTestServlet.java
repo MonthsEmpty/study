@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 public class MyTestServlet implements Servlet{
 
-	private static ServletConfig servletConfig;
+	private ServletConfig servletConfig;
 	
 	public void destroy() {
 		
@@ -31,9 +31,10 @@ public class MyTestServlet implements Servlet{
 
 	public void service(ServletRequest request, ServletResponse response)
 			throws ServletException, IOException {
+		String paramter = request.getParameter("paramter");
 		String initParamter = this.servletConfig.getInitParameter("ininName");
 		PrintWriter writer = response.getWriter();
-		writer.print(initParamter);
+		writer.print(initParamter + "---" + paramter);
 	}
 
 }
